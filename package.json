@@ -1,0 +1,14 @@
+{
+  "name": "kitapay_homepage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:kitamanager/kitapay_homepage.git",
+  "author": "LC Company GmbH",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "http-server"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

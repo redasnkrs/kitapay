@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!--
+    meta tags
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+    title tag
+    -->
+    <title>KitaPay</title>
+
+    <!--
+    favicon
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/SVG/icon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/SVG/icon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kitapay.de/aassets/logo/SVG/icon.svg">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+
+    <!--
+    stylesheets
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/overlay-scrollbars.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/klaro/klaro.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-styles.css">
+    <style>
+        .kita_aside_cta_btn {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9998; /* This ensures the button stays on top of everything */
+            background-color: #008dff; /* Bootstrap primary color */
+            color: #fff; /* White color for the text */
+            border: none; /* Removes the border */
+            padding: 10px 20px; /* Adds some padding */
+            border-radius: .25rem; /* Rounds the corners */
+            cursor: pointer; /* Changes the cursor when you hover over the button */
+            display: flex; /* Aligns the icon and the text side by side */
+            align-items: center; /* Centers the icon and the text vertically */
+            justify-content: center; /* Centers the icon and the text horizontally */
+        }
+    
+        .kita_aside_cta_btn i {
+            margin-right: 10px; /* Adds some space between the icon and the text */
+        }
+
+        .kitapay-contact-offcanvas {
+            z-index: 9999; text-align: center;
+            background-color: #008dff; 
+            color: #fff;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/2cf0c2d9f2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="main-wrapper" id="mainWrapper">
+
+    <!--
+    preloader - start
+    -->
+    <div class="preloader">
+        <div class="preloader-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 200 200">
+            <g class="pre load6">
+                <path fill="#1B1A1C" d="M124.5,57L124.5,57c0,3.9-3.1,7-7,7h-36c-3.9,0-7-3.1-7-7v0c0-3.9,3.1-7,7-7h36
+                C121.4,50,124.5,53.1,124.5,57z"/>
+                <path fill="#1B1A1C" d="M147.7,86.9L147.7,86.9c-2.7,2.7-7.2,2.7-9.9,0l-25.5-25.5c-2.7-2.7-2.7-7.2,0-9.9l0,0
+                c2.7-2.7,7.2-2.7,9.9,0L147.7,77C150.5,79.8,150.5,84.2,147.7,86.9z"/>
+                <path fill="#1B1A1C" d="M143,74.5L143,74.5c3.9,0,7,3.1,7,7v36c0,3.9-3.1,7-7,7l0,0c-3.9,0-7-3.1-7-7v-36
+                C136,77.6,139.1,74.5,143,74.5z"/>
+                <path fill="#1B1A1C" d="M148.4,112.4L148.4,112.4c2.7,2.7,2.7,7.2,0,9.9L123,147.7c-2.7,2.7-7.2,2.7-9.9,0h0c-2.7-2.7-2.7-7.2,0-9.9
+                l25.5-25.5C141.3,109.6,145.7,109.6,148.4,112.4z"/>
+                <path fill="#1B1A1C" d="M125.5,143L125.5,143c0,3.9-3.1,7-7,7h-36c-3.9,0-7-3.1-7-7l0,0c0-3.9,3.1-7,7-7h36 C122.4,136,125.5,139.1,125.5,143z"/>
+                <path fill="#1B1A1C" d="M52.3,113.1L52.3,113.1c2.7-2.7,7.2-2.7,9.9,0l25.5,25.5c2.7,2.7,2.7,7.2,0,9.9h0c-2.7,2.7-7.2,2.7-9.9,0
+                L52.3,123C49.5,120.2,49.5,115.8,52.3,113.1z"/>
+                <path fill="#1B1A1C" d="M57,75.5L57,75.5c3.9,0,7,3.1,7,7v36c0,3.9-3.1,7-7,7h0c-3.9,0-7-3.1-7-7v-36C50,78.6,53.1,75.5,57,75.5z"/>
+                <path fill="#1B1A1C" d="M86.9,52.3L86.9,52.3c2.7,2.7,2.7,7.2,0,9.9L61.5,87.6c-2.7,2.7-7.2,2.7-9.9,0l0,0c-2.7-2.7-2.7-7.2,0-9.9
+                L77,52.3C79.8,49.5,84.2,49.5,86.9,52.3z"/>
+            </g>
+            </svg>
+        </div>
+    </div>
+    <!--
+    preloader - end
+    -->
+
+    <!--
+    navigation - start
+    -->
+    <div class="navigation navigation-1">
+        <div class="navigation-wrapper">
+            <div class="container">
+                <div class="navigation-inner">
+                    <div class="navigation-logo">
+                        <a class="logo" href="index.html">
+                            <img src="assets/logo/PNG/logo_dark_line.png" height="50" alt="kitapay-logo">
+                        </a>
+                        <a class="logo-white" href="index.html">
+                            <img src="assets/logo/PNG/logo_light_line.png" height="50" alt="kitapay-logo">
+                        </a>
+                    </div>
+                    <div class="navigation-menu">
+                        <div class="mobile-header">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="assets/logo/PNG/logo_light_line.png" height="50" alt="Logo">
+                                </a>
+                            </div>
+                            <ul>
+                                <li class="close-button">
+                                    <i class="fas fa-times"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="parent">
+                            <li>
+                                <a href="index.html#informationen" class="link-underline link-underline-1 js-anchor-link">
+                                    <span>Informationen</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="scroll-btn" href="index.html#preis" class="js-anchor-link link-underline link-underline-1">
+                                    <span>Preise</span>
+                                </a>
+                            </li>
+<!--                            <li>-->
+<!--                                <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="link-underline link-underline-1">-->
+<!--                                    <span>Kontakt</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+                            <li>
+                                <a href="https://app.kitapay.de" target="_blank" class="link-underline link-underline-1">
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#werbematerialienFormModal"
+                                class="link-underline link-underline-1">
+                                <span>Kontakt</span>
+                                </a>
+                            </li> -->
+                        </ul>
+                        <div class="social">
+                            <h6>Folge uns</h6>
+                            <ul>
+                                <li>
+                                    <a href="https://facebook.com/kitapay.de" target="_blank">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://instagram.com/kitapay.de" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="background-pattern">
+                            <div class="background-pattern-img background-loop" style="background-image: url(assets/images/patterns/pattern.jpg);"></div>
+                            <div class="background-pattern-gradient"></div>
+                        </div>
+                    </div>
+                    <div class="navigation-bar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    navigation - end
+    -->
+
+    <!--
+    hero 1 - start
+    -->
+    <div class="hero hero-1">
+        <div class="hero-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-0 order-lg-1 col-12 order-2">
+                        <div class="hero-content c-white">
+                            <h1>Essensabrechnung leicht gemacht</h1>
+                                <p class="large">
+                                    KitaPay ist das smarte Bezahlsystem für die Verpflegung von Kindern in Kitas, Krippen, Hort und Schulen.
+                                    Es übernimmt zuverlässig die Abrechnung zwischen Eltern, Einrichtungen und Caterern.
+                               </p>
+                               <div class="download-button-group">
+                                <a href="https://play.google.com/store/apps/details?id=de.kitapay.order" target="_blank" class="download-button download-button-2 download-button-google">
+                                    <div class="download-button-inner">
+                                        <div class="download-button-icon c-green">
+                                            <i class="fab fa-google-play"></i>
+                                        </div>
+                                        <div class="download-button-content">
+                                            <h5 class="c-grey upper ls-1">jetzt bei</h5>
+                                            <h3 class="c-dark ls-2">Google Play</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="https://apps.apple.com/de/app/kitapay-pro/id6740690941" target="_blank" class="download-button download-button-2 download-button-apple">
+                                    <div class="download-button-inner">
+                                        <div class="download-button-icon c-blue">
+                                            <i class="fab fa-apple"></i>
+                                        </div>
+                                        <div class="download-button-content">
+                                            <h5 class="c-grey upper ls-1">verfügbar im</h5>
+                                            <h3 class="c-dark ls-2">Apple Store</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-0 order-lg-2 col-10 offset-1 order-1">
+                        <div class="hero-image">
+                            <img  src="assets/app/screen_home.png" height="600px" alt="Logo">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="background-pattern background-pattern-1">
+                <div class="background-pattern-img background-loop" style="background-image: url(assets/images/patterns/pattern.jpg);"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image" style="background-image: url(assets/images/patterns/pattern-1.jpg)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    hero 1 - end
+    -->
+
+
+    <!-- 
+        This code represents a CTA (Call to Action) button in the sidebar of a web page.
+        When clicked, it triggers an offcanvas menu to slide in from the right side of the screen.
+        The offcanvas menu is identified by the ID "offcanvasRight".
+        The button displays an icon (represented by the "far fa-comments" class) and the text "Kontakt".
+    -->
+    <div class="kita_aside_cta_btn" id="aside-contact">
+        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <div class="d-flex align-items-center">
+                <!-- <i class="far fa-comments"></i> -->
+                <p>Kontakt</p>  
+            </div>     
+        </a>
+    </div>
+
+
+    <div class="offcanvas offcanvas-end p-4 d-flex align-items-center justify-content-center kitapay-contact-offcanvas" 
+     tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="container" >
+
+            <div class="row d-flex m-4 align-items-center justify-content-center">
+                <h4 class="offcanvas-title" id="offcanvasRightLabel">Rufen Sie uns an unter</h4>
+                <p>
+                    <a href="tel:+4989248897791">+49 89 248 897 791</a>
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="row d-flex m-4 align-items-center justify-content-center">
+                <h4 class="offcanvas-title" id="offcanvasRightLabel">Rückruf</h4>
+                <a href="index.html#" data-bs-toggle="modal" data-bs-target="#rueckrufAnfordernModal">
+                    <p>Rückruf anfordern</p>
+                  </a>
+            </div>
+
+            <hr>
+
+            <div class="row d-flex m-4 align-items-center justify-content-center">
+                <h4 class="offcanvas-title" id="offcanvasRightLabel">Chat</h4>
+               <a href="index.html#" >
+                 <p>Wir sind auch gerne für Sie über Chat erreichbar</p>
+               </a>
+            </div>
+
+            <hr>
+
+            <div class="row d-flex m-4 align-items-center justify-content-center">
+                <h4 class="offcanvas-title" id="offcanvasRightLabel">Oder fordern Sie Informationen an</h4>
+               <a href="index.html#" data-bs-toggle="modal" data-bs-target="#werbematerialienFormModal">
+                 <p>Gerne senden wir Ihnen unsere aktuelle Informationsbroschüre inkl. Preise</p>
+               </a>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    app features wide section - start
+    -->
+    <div class="app-feature app-feature-1">
+        <div class="app-feature-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-10 offset-1">
+                        <div class="section-heading center width-64">
+                            <div class="sub-heading c-green upper ls-1">
+                                <i class="las la-cog"></i>
+                                <h5>funktionen</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>Was wir mit KitaPay bieten.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-5 gy-5">
+                    <div class="col-lg-4 offset-lg-0 col-md-6 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" class="icon">
+                                    <i class="fa-light fa-hand-sparkles"></i>
+                                </a>
+                                <a href="index.html#">
+                                    <h3 class="c-dark">Abrechnungsvarianten</h3>
+                                </a>
+                                <p class="c-grey">Nicht nur das Essensgeld kann abgerechnet werden, sondern auch:</p>
+                                <ul class="list-unstyled">
+                                    <li class="custom-bullet">
+                                        Personalkosten
+                                    </li>
+                                    <li class="custom-bullet">
+                                        Kitagebühr
+                                    </li>
+                                    <li class="custom-bullet">
+                                        Ausflüge
+                                    </li>
+                                    <li class="custom-bullet">
+                                        Rückerstattung von storniertem Essen an die Einrichtung uvm.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-6 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" class="icon">
+                                    <i class="fa-light fa-people-roof"></i>
+                                </a>
+                                <a href="index.html#">
+                                    <h3 class="c-dark">Übergreifende Verwaltung</h3>
+                                </a>
+                                <p class="c-grey">Mit einem einzigen Konto kannst du bequem mehrere Kinder oder Einrichtungen verwalten, ohne dich jedes Mal neu anmelden zu müssen. So hast du alles im Blick und kannst effektiv und zielorientiert arbeiten.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-6 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" class="icon">
+                                    <i class="fa-light fa-shuffle"></i>
+                                </a>
+                                <a href="index.html#">
+                                    <h3 class="c-dark">BuT</h3>
+                                </a>
+                                <p class="c-grey">Einfache Automatisierte Abrechnung mit BuT (Bildung&amp;Teilhabe). Von der Anmeldung bis zum Einreichen. Alles aus 1 Hand.</p>
+								<p class="c-grey">Einrichtungen können diese komplexen Aufgaben komplett abgeben.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-6 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" class="icon">
+                                    <i class="fa-light fa-magnifying-glass-chart"></i>
+                                </a>
+                                <a href="index.html#">
+                                    <h3 class="c-dark">Transparente Preise</h3>
+                                </a>
+                                <p class="c-grey">Unsere Preise sind transparent und beinhalten keine versteckten Kosten, <b>keine Einrichtungsgebühren</b> oder unangenehmen Überraschungen. Wir garantieren eine klare und offene Kommunikation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-6 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" class="icon">
+                                    <i class="fa-light fa-credit-card"></i>
+                                </a>
+                                <a href="index.html#">
+                                    <h3 class="c-dark">Einfache Zahlung</h3>
+                                </a>
+                                <p class="c-grey">Die Zahlung kannst du problemlos mit allen gängigen Zahlungsmethoden durchführen. Die Abwicklung ist dabei einfach, schnell und benutzerfreundlich.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-6 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" class="icon">
+                                    <i class="fa-light fa-clock-rotate-left"></i>
+                                </a>
+                                <a href="index.html#">
+                                    <h3 class="c-dark">Zeitersparnis</h3>
+                                </a>
+                                <p class="c-grey">Spar dir die Zeit zur Prüfung und Verwaltung der Abrechnung. Wir übernehmen das für dich automatisiert und sicher. Kein lästiges Nachprüfen oder suchen von Rechnungen und Zahlungen mehr!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    app features wide section - end
+    -->
+
+    <!--
+    video section - start
+    --
+    <div class="video-section">
+        <div class="video-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 offset-lg-1 order-lg-1 col-10 offset-1 order-2">
+                        <div class="video-section-content">
+                            <div class="section-heading section-heading-1 center-responsive c-white">
+                                <div class="sub-heading upper ls-1">
+                                    <i class="las la-video"></i>
+                                    <h5>zum anschauen</h5>
+                                </div>
+                                <div class="main-heading">
+                                    <h1>Das Konzept und die Funktion von KitaPay in unter 3 Minuten erklärt.</h1>
+                                </div>
+                            </div>
+                            <a href="#" class="button button-1">
+                                <div class="button-inner">
+                                    <div class="button-content">
+                                        <h4>Kontaktiere uns</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 order-lg-2 order-1">
+                        <div class="video-section-video">
+                            <figure>
+                                <img class="drop-shadow-4" src="assets/images/video-img.jpg" alt="Video">
+                                
+                                <div class="play">
+                                    <a href="https://www.youtube.com/watch?v=WIl5F5rM5wQ" class="glightbox">
+                                        <i class="la la-play"></i>
+                                    </a>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="background-pattern background-pattern-radius drop-shadow">
+                    <div class="background-pattern-img background-loop" style="background-image: url(assets/images/patterns/pattern.jpg);"></div>
+                    <div class="background-pattern-gradient"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    video section - end
+    -->
+
+    <!--
+    feature section - start
+    -->
+    <div class="scroll-place" id="preis"></div>
+    <div class="prices-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 offset-lg-0 col-12">
+                    <div class="section-heading center">
+                        <div class="sub-heading c-green upper ls-1">
+                            <i class="fa-light fa-magnifying-glass-chart"></i>
+                            <h5>Transparenz</h5>
+                        </div>
+                        <div class="main-heading c-dark">
+                            <h1>Unser Preis</h1>
+                        </div>
+                        <div class="preise-block faq" id="preis-accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="faq-1">
+                                    <div class="faq-wrapper">
+                                        <div class="inner-block">
+                                            <div class="pheaders">
+                                                <h3>0,12€ pro Essen</h3>
+                                                <h3>Keine Einrichtungskosten</h3>
+                                                <h4 class="header-btn">zzgl. Zahlungsgebühren
+                                                    <button 
+                                                    class="accordion-button price-show-btn collapsed" 
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" 
+                                                    data-bs-target="#price-collapse" 
+                                                    aria-expanded="true"
+                                                    aria-controls="price-collapse">
+                                                    </button></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div 
+                                id="price-collapse" 
+                                class="accordion-collapse collapse" 
+                                aria-labelledby="faq-3" 
+                                data-bs-parent="#preis-accordion">
+                                  <div class="accordion-body">
+                                    <h3>Unsere Zahlungsmethoden und Gebühren:</h3>
+                                    <div class="listing__table">
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/transfer-icon.svg" class="" alt="Uberweisung">
+                                                </span>
+                                                <h3>Überweisung</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed"></div>
+                                                    <div class="rate-plus"></div>
+                                                    <div class="rate-fixed"></div>
+                                                    <div class="rate-plus"></div>
+                                                    <div class="rate-variable">Gratis</div>
+                                                </div>
+                                            </div>
+                                        </div>
+										<div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/sepa-direct-icon.svg" class="" alt="SEPA-Lastschrift">
+                                                </span>
+                                                <h3>SEPA-Lastschrift</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed"></div>
+                                                    <div class="rate-plus"></div>
+                                                    <div class="rate-fixed"></div>
+                                                    <div class="rate-plus"></div>
+                                                    <div class="rate-variable">Gratis</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/paypal-icon.svg" class="" alt="PayPal">
+                                                </span>
+                                                <h3>PayPal</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed">2.99%</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-fixed">0.35€</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-variable">19% MwSt</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/klarna-icon.svg" class="" alt="SOFORT Uberweisung (Klarna)">
+                                                </span>
+                                                <h3>SOFORT Überweisung (Klarna)</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed">0.9%</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-fixed">0.25€</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-variable">19% MwSt</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/mastercard-icon.svg" class="" alt="Mastercard">
+                                                </span>
+                                                <h3>Mastercard</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed">1.8%</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-fixed">0.25€</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-variable">19% MwSt</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/visa-icon.svg" class="" alt="Visa">
+                                                </span>
+                                                <h3>Visa</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed">1.8%</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-fixed">0.25€</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-variable">19% MwSt</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/amex-icon.svg" class="" alt="American Express">
+                                                </span>
+                                                <h3>American Express</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed">1.8%</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-fixed">0.25€</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-variable">19% MwSt</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/giropay-icon.svg" class="" alt="GiroPay">
+                                                </span>
+                                                <h3>GiroPay</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed">1.5%</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-fixed">0.25€</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-variable">19% MwSt</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__row">
+                                            <div class="listing__row--name">
+                                                <span class="row-logo">
+                                                    <img src="assets/icons/apple-pay-icon.svg" class="" alt="Apple Pay">
+                                                </span>
+                                                <h3>Apple Pay</h3>
+                                            </div>
+                                            <div class="listing__row--info">
+                                                <div class="rate-row">
+                                                    <div class="rate-fixed">1.8%</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-fixed">0.25€</div>
+                                                    <div class="rate-plus">+</div>
+                                                    <div class="rate-variable">19% MwSt</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature-section feature-section-1 feature-section-spacing-2">
+        <div class="feature-section-wrapper">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-5 col-12">
+                        <div class="feature-section-image">
+                            <img src="assets/app/screen_home_laptop.png" class="image"  style="left: initial;
+                            right: -75%;
+                            border-top-left-radius: 2rem;
+                            border-bottom-right-radius: 2rem;
+                            border-bottom-left-radius: 2rem;
+                            height: auto!important;
+                            max-width: inherit;
+                            width: 200%;" alt="Laptop">
+                            <img src="assets/images/feature-section-2-phone.png" class="phone" alt="phone">
+                            <div class="background-pattern background-pattern-radius-reverse">
+                                <div class="background-pattern-img background-loop" style="background-image: url(assets/images/patterns/pattern.jpg);"></div>
+                                <div class="background-pattern-gradient"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 col-md-8 offset-md-2 col-12">
+                        <div class="feature-section-content">
+                            <div class="section-heading">
+                                <div class="sub-heading c-green upper ls-1">
+                                    <i class="las la-cog"></i>
+                                    <h5>unsere app</h5>
+                                </div>
+                                <div class="main-heading c-dark">
+                                    <h1>Zugriff von überall</h1>
+                                </div>
+                            </div>                            
+                            <div class="icon-text-1-group">
+                                <div class="row">
+                                    <div class="icon-text-1 d-flex">
+                                        <div class="col-3 text-center">
+                                            <i class="las fa-light fa-desktop"></i>
+                                        </div>
+                                        <div class="col-9">
+                                            <h4 class="c-dark d-flex">Computer</h4>
+                                            <p class="c-grey d-flex">Von jedem Computer über den Webbrowser.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="icon-text-1 d-flex">
+                                        <div class="col-3 text-center">
+                                            <i class="las fa-light fa-tablet"></i>
+                                        </div>
+                                        <div class="col-9">
+                                            <h4 class="c-dark">Tablet</h4>
+                                        <p class="c-grey">Von deinem Tablet aus per Browser oder App.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="icon-text-1 d-flex">
+                                        <div class="col-3 text-center">
+                                            <i class="las fa-light fa-mobile-notch"></i>
+                                        </div>
+                                        <div class="col-9">
+                                            <h4 class="c-dark">Smartphone</h4>
+                                            <p class="c-grey">Jederzeit mobil mit deinem Smartphone und unserer App.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    feature section - end
+    -->
+
+    <!--
+    faq section - start
+    -->
+    <div class="faq-section">
+        <div class="faq-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-10 offset-xxl-1 col-lg-12 col-12">
+                        <div class="section-heading center width-64">
+                            <div class="sub-heading c-green upper ls-1">
+                                <i class="las la-file-alt"></i>
+                                <h5>FAQ</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>Die häufigsten Fragen</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-9 col-md-12 col-12">
+                        <div class="faq-wrapper">
+                            <div class="faq" id="faq-accordion">
+                                <!--
+                                accordion item - start
+                                -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-1">
+                                      <button 
+                                      class="accordion-button collapsed" 
+                                      type="button" 
+                                      data-bs-toggle="collapse" 
+                                      data-bs-target="#faq-collapse-1" 
+                                      aria-expanded="false"
+                                      aria-controls="faq-collapse-1">
+                                       <span>Wie funktioniert die Bestellung bei KitaPay?</span>
+                                      </button>
+                                    </div>
+                                    <div 
+                                    id="faq-collapse-1" 
+                                    class="accordion-collapse collapse" 
+                                    aria-labelledby="faq-1" 
+                                    data-bs-parent="#faq-accordion">
+                                      <div class="accordion-body">
+                                        <p>Da wir die größtmögliche Flexibilität bieten möchten, gibt es unterschiedliche Arten der Bestellung.
+                                        Dabei eintscheidet der jeweilige Caterer, welche Variante für ihn selbst aktiv ist.<br>
+                                        <br>
+                                        Es besteht die Wahl zwischen automatisierten oder manuellen Bestellungen. Auch kann hier flexibel eingestellt werden, ob diese monatlich oder wöchentlich durchgeführt wird.<br>
+                                        Bei manueller Bestellung müssen die Eltern die Bestellung selbstständig auslösen. Bei automatischer Bestellung lösen wir diese aus. Sofern genug verfügbares Guthaben vorhanden ist, wird die Bestellung automatisch bestätigt. 
+                                        Ist dies nicht der Fall, muss der Nutzer die Bestellung manuell durch Zahlung der Rechnung bestätigen.<br>
+                                    </p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--
+                                accordion item - end
+                                -->
+                                <!--
+                                accordion item - start
+                                -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-2">
+                                      <button 
+                                      class="accordion-button"
+                                      type="button" 
+                                      data-bs-toggle="collapse" 
+                                      data-bs-target="#faq-collapse-2" 
+                                      aria-expanded="true"
+                                      aria-controls="faq-collapse-2">
+                                        <span>Was kostet KitaPay?</span>
+                                      </button>
+                                    </div>
+                                    <div 
+                                    id="faq-collapse-2" 
+                                    class="accordion-collapse collapse show"
+                                    aria-labelledby="faq-2" 
+                                    data-bs-parent="#faq-accordion">
+                                      <div class="accordion-body">
+                                        <p>Die Grundgebühr von KitaPay beträgt <strong>zwölf Cent</strong> pro bestelltem Essen.<br>
+                                        Neben der Grundgebühr von KitaPay fallen für die Nutzung keine weiteren Gebühren an.<br><br>
+                                        Um den Preis allerdings so gering und den Nutzen doch hoch zu halten, haben wir uns dazu entschieden, die Gebühren der Online-Zahlungsmethoden transparent an unsere Kunden weiterzugeben.<br>
+											<strong>Zahlungsmethoden SEPA und Banküberweisung sind gratis</strong> <br>
+                                        Bei jeder Zahlung kann also die Höhe der Gebühr durch Auswahl der Zahlungsmethode selbst gewählt werden. Eine genaue Übersicht der Gebühren findest du unter <strong><a href="index.html#" class="link-underline">Preise</a></strong></p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--
+                                accordion item - end
+                                -->
+								
+								
+								
+								
+                                <!--
+                                accordion item - start
+                                -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-3">
+                                      <button 
+                                      class="accordion-button collapsed" 
+                                      type="button" 
+                                      data-bs-toggle="collapse" 
+                                      data-bs-target="#faq-collapse-3" 
+                                      aria-expanded="false"
+                                      aria-controls="faq-collapse-3">
+                                        <span>Wie kann bei KitaPay bezahlt werden?</span>
+                                      </button>
+                                    </div>
+                                    <div 
+                                    id="faq-collapse-3" 
+                                    class="accordion-collapse collapse" 
+                                    aria-labelledby="faq-3" 
+                                    data-bs-parent="#faq-accordion">
+                                      <div class="accordion-body">
+                                        <p>Grundsätzlich können alle Zahlungen als Direktzahlung durchgeführt werden. Zusätzlich kann auch Guthaben manuell aufgeladen werden (kein Mindestbetrag), welches dann automatisch mit offenen Rechnungen verrechnet wird.<br>
+                                        Anders als bei anderen Anbietern, können offene Rechnungen bei uns auch sofort nach Erstellung bequem und online bezahlt werden. Es muss also vorher kein Guthaben aufgeladen werden.<br>
+                                    Derzeit zur Zahlung verfügbar sind: <br>Überweisung, SOFORT-Überweisung, Giropay, PayPal, Kreditkarte, SEPA-Lastschrift, Apple Pay*<br><small>*nur auf unterstützten Geräten</small></p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--
+                                accordion item - end
+                                -->
+								
+								<!--
+                                accordion item - start
+                                -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-4">
+                                      <button 
+                                      class="accordion-button collapsed"
+                                      type="button" 
+                                      data-bs-toggle="collapse" 
+                                      data-bs-target="#faq-collapse-4" 
+                                      aria-expanded="false"
+                                      aria-controls="faq-collapse-4">
+                                        <span>Wie funktioniert BuT (Bildung&amp;Teilhabe)?</span>
+                                      </button>
+                                    </div>
+                                    <div 
+                                    id="faq-collapse-4" 
+                                    class="accordion-collapse collapse show"
+                                    aria-labelledby="faq-4" 
+                                    data-bs-parent="#faq-accordion">
+                                      <div class="accordion-body">
+                                        <p>Das BuT Formular wird von KitaPay online vorbereitet. <br>
+											Nur noch Unterschreiben, dann wird es direkt digital an die entsprechende 
+Landesregierung weitergeleitet. Die Genehmigung wird dann wieder in unser System importiert und im Kundenkonto angezeigt.
+Dort ist der Status sowie die Gültigkeitsdauer immer einsehbar <br>
+											Verwalten, einreichen und abrechnen alles aus 1 Hand. Wir kümmern uns darum.</p>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--
+                                accordion item - end
+                                -->
+								
+								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    faq section - end
+    -->
+
+    
+
+    <!--
+    cta section - start
+    -->
+    <div class="scroll-place" id="informationen"></div>
+    <div class="cta-section">
+        <div class="contact-form-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="section-heading center width-71">
+                            <div class="sub-heading c-green upper ls-1">
+                                <i class="fa-light fa-lightbulb-on"></i>
+                                <h5>Interesse geweckt?</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>Information</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-5 gy-5">
+                    <div class="col-lg-4 offset-lg-0 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" data-bs-toggle="modal" data-bs-target="#catererModal" class="icon no-click">
+                                    <i class="fa-light fa-hand-sparkles"></i>
+                                </a>
+                                <a href="index.html#" data-bs-toggle="modal" data-bs-target="#catererModal">
+                                    <h3 class="c-dark">Als Caterer</h3>
+                                </a>
+                                <p class="c-grey">Du bist Caterer und interessierst dich für KitaPay? Dann klicke hier!</p>
+
+                                <a href="index.html#" class="read-more-btn" data-bs-toggle="modal" data-bs-target="#catererModal">
+                                    <span>mehr lesen</span>
+                                </a>
+                            </div>
+                            
+                            <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#catererModal" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 offset-lg-0 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" data-bs-toggle="modal" data-bs-target="#einrichtungModal" class="icon">
+                                    <i class="fa-light fa-people-roof"></i>
+                                </a>
+                                <a href="index.html#" data-bs-toggle="modal" data-bs-target="#einrichtungModal">
+                                    <h3 class="c-dark">Als Einrichtung</h3>
+                                </a>
+                                <p class="c-grey">Du willst KitaPay in deiner Einrichtung nutzen, dann hier entlang.</p>
+
+                                <a href="index.html#" class="read-more-btn" data-bs-toggle="modal" data-bs-target="#einrichtungModal">
+                                    <span>mehr lesen</span>
+                                </a>
+                            </div>
+                            <!-- <a href="https://xg8004fp9ro.typeform.com/to/xHQDHEfI" target="_blank" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-12 d-flex">
+                        <div class="app-feature-single app-feature-single-2 d-flex align-self-stretch">
+                            <div class="app-feature-single-wrapper">
+                                <a href="index.html#" data-bs-toggle="modal" data-bs-target="#elternModal" class="icon">
+                                    <i class="fa-light fa-shuffle"></i>
+                                </a>
+                                <a href="index.html#" data-bs-toggle="modal" data-bs-target="#elternModal">
+                                    <h3 class="c-dark">Als Elternteil</h3>
+                                </a>
+                                <p class="c-grey">Du möchtest Informationen als Elternteil? Schau mal hier!</p>
+
+                                <a href="index.html#" class="read-more-btn" data-bs-toggle="modal" data-bs-target="#elternModal">
+                                    <span>mehr lesen</span>
+                                </a>
+                            </div>
+                            <!-- <a href="https://xg8004fp9ro.typeform.com/to/BTPXjUIY" target="_blank" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    cta section - end
+    -->
+
+    <!--
+    footer - start
+    -->
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-8 col-12">
+                        <div class="footer-row">
+                            <div class="footer-detail">
+                                <a href="index.html">
+                                    <img src="assets/logo/PNG/logo_dark_line.png" height="100px" alt="footer-logo">
+                                </a>
+                                <p class="c-grey-1">KitaPay vereinfacht die Bestellverwaltung für Eltern, Kindergärten und Caterer und übernimmt dabei auch die Abrechnung.</p>
+                                <div class="links">
+                                    <a class="link-underline" href="mailto:info@kitapay.de">
+                                        <span>info@kitapay.de</span>
+                                    </a>
+                                    <a class="link-underline" href="tel:+4989248897791">
+                                        <span>+49 89 248 897 791</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="footer-list footer-social social-gradient">
+                                <h6>Folge uns</h6>
+                                <ul>
+                                    <li class="facebook">
+                                        <a href="https://www.facebook.com/kitapay.de" target="_blank" class="link-underline">
+                                            <i class="fab fa-facebook"></i>
+                                            <span>Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li class="instagram">
+                                        <a href="https://instagram.com/kitapay.de" target="_blank" class="link-underline">
+                                            <i class="fab fa-instagram"></i>
+                                            <span>Instagram</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h6>Links</h6>
+                                <ul>
+                                    <li>
+                                        <a href="index.html#informationen" class="link-underline">
+                                            <span>Informationen</span>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="index.html#preis" class="link-underline">
+                                            <span>Preise</span>
+                                        </a>
+                                    </li>
+<!--                                    <li>-->
+<!--                                        <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal" class="link-underline">-->
+<!--                                            <span>Kontakt</span>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h6>Rechtliches</h6>
+                                <ul>
+                                    <li>
+                                        <a href="datenschutz.html" class="link-underline">
+                                            <span>Datenschutz</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="impressum.html" class="link-underline">
+                                            <span>Impressum</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(Tawk_API.toggle())" class="link-underline">
+                                            <span>Hilfe</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-8 col-12">
+                        <div class="footer-copyright c-grey-1">
+                            <br><h6>&copy; 2023 KitaPay</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-logos">
+                    <img src="assets/icons/transfer-icon.svg" alt="payment">
+                    <img src="assets/icons/giropay-icon.svg" alt="payment">
+                    <img src="assets/icons/klarna-icon.svg" alt="payment">
+                    <img src="assets/icons/paypal-icon.svg" alt="payment">
+                    <img src="assets/icons/sepa-direct-icon.svg" alt="payment">
+                    <img src="assets/icons/apple-pay-icon.svg" alt="payment">
+                    <img src="assets/icons/visa-icon.svg" alt="payment">
+                    <img src="assets/icons/mastercard-icon.svg" alt="payment">
+                    <img src="assets/icons/amex-icon.svg" alt="payment">
+                </div>
+            </div>
+            <div class="footer-pattern" style="background-image: url(assets/images/patterns/pattern-1.jpg)"></div>
+        </div>
+    </footer>
+    <!--
+    footer - end
+    -->
+
+    </div>
+
+        <!--
+    scripts
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/glightbox.min.js"></script>
+    <script src="assets/js/overlay-scrollbars.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Klaro -->
+    <script src="assets/js/klaro/klaro-no-css.js"></script>
+    <script src="assets/js/klaro/klaro.js"></script>
+    <script src="assets/js/klaro/klaro-init.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+        type="text/plain"
+        data-type="application/javascript"
+        data-name="google-tag-manager"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-17358775082"
+    ></script>
+    <script
+        type="text/plain"
+        data-type="application/javascript"
+        data-name="google-tag-manager"
+    >
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-17358775082');
+    </script>
+    <script async defer src="https://formfacade.com/include/103489291431448301917/form/1FAIpQLSc9K1zJ2DPWU7ap9y-7SVOnJ2PbPInOuKKJXHvTTtD_2YVyqw/bootstrap.js?div=ff-compose"></script>  
+    <script async defer src="https://formfacade.com/include/103489291431448301917/form/1FAIpQLSfG2aKbrPDFla7nb-tSOqiOdm63UtRfIzsIQ4CzE8jiC2KkFA/bootstrap.js?div=ff-compose-ruekruf"></script>
+    <!--Old Tawk.to Script
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/63ea1454c2f1ac1e2032f7b1/1gp55uqir';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+    -->
+    <!--Start of Chatwoot script -->
+    <script>
+      (function(d,t) {
+        var BASE_URL="https://chat.kitapay.de";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'EpHuJLWK8sfaBwb2NbWxAepH',
+            baseUrl: BASE_URL
+          })
+        }
+      })(document,"script");
+    </script>
+  <!--End of Chatwoot script -->
+						  
+
+    <div class="modal fade info-modals" id="catererModal" tabindex="-1" aria-labelledby="catererModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="catererModalLabel">Als Caterer</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li>Keine Einrichtungskosten</li>
+                <li>Keine monatlichen Grundgebühren</li>
+                <li>Ausführliche Produktions- und Bestelllisten</li>
+                <li>Allergenmanagement</li>
+                <li>Schnittstelle zu eigenen Systemen möglich</li>
+                <li>Auszahlung am 5. des Folgemonats &bull; Frühere Auszahlung gegen Gebühr möglich</li>
+                <li>Kioskmodus kompatibel mit Bestandshardware, kein Neukauf notwendig</li>
+                <li>Ausgabe mit Liste oder Online Systemen mit PIN, Smartphone oder Chip</li>
+                <li>Speiseplan kann direkt im System erstellt oder aus Bestandssystemen importiert werden</li>
+                <li>White-Label Lösung möglich</li>
+                <li>Abrechnungs- und Rechnungshistorie einfach und übersichtlich</li>
+                <li>Kosten für KitaPay (0,12€ pro Essen) können individuell aufgeteilt werden (Standard ist die Bezahlung durch die Eltern)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade info-modals" id="einrichtungModal" tabindex="-1" aria-labelledby="einrichtungModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="einrichtungModalLabel">Als Einrichtung</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li>Kein aufwändiges Verwalten der Bestellung</li>
+                <li>Keine komplizierten Abrechnungen mit Eltern oder Caterern</li>
+                <li>Speiseplan online verfügbar, jederzeit druckbar</li>
+                <li>Allergenmanagement</li>
+                <li>Keine zusätzlichen Kosten für die Einrichtung</li>
+                <li>Abrechnung mit Trägern oder Kostenübernahmestellen werden von KitaPay übernommen</li>
+                <li>Eltern und Kinder können direkt und einfach angelegt und verwaltet werden</li>
+                <li>Übersichtliche und intuitive Benutzeroberfläche per App oder im Web</li>
+                <li>Zusätzlich Abrechnung von Subanbietern oder Jause möglich</li>
+                <li>Schließtage können einfach über die Kalenderfunktion eingetragen werden</li>
+                <li>Übersicht der angemeldeten und abwesenden Kinder</li>
+                <li>Als Träger können mehrere Einrichtungen verwaltet werden</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade info-modals" id="elternModal" tabindex="-1" aria-labelledby="elternModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="elternModalLabel">Als Elternteil</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li>Mehrere Kinder sind in einem Konto verwaltbar - unabhängig von der Einrichtung, sofern KitaPay dort auch genutzt wird</li>
+                <li>Es werden nur tatsächlich gelieferte Essen verrechnet</li>
+                <li>Transparente Preisgestaltung 0,12€ pro Essen zzgl. möglichen Zahlungsgebühren</li>
+				<li><strong>Zahlungsmethoden SEPA und Banküberweisung sind gratis</strong></li>
+				<li>BuT kann von KitaPay eingereicht, verwaltet und abgerechnet werden</li>
+                <li>Volle Kostenkontrolle</li>
+                <li>Einfaches Bestellen und Stornieren der Essen</li>
+                <li>Guthaben kann in Echtzeit aufgeladen werden</li>
+                <li>Abwesenheiten können einfach über Kalenderfunktion eingestellt werden</li>
+                <li>Einfache und schnelle Registrierung</li>
+                <li>Übersichtlicher und intuitiver Aufbau der Benutzeroberfläche in App oder im Web</li>
+                <li>Speisepläne sind online verfügbar und druckbar</li>
+                <li>Alle gängigen Zahlungsmethoden</li>
+                <li>Jederzeit informiert über Änderungen dank Push-Funktion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade info-modals" id="werbematerialienFormModal" 
+    tabindex="-1" 
+    aria-labelledby="werbematerialienFormModalLabel"
+     aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header p-4">
+              <h5 class="modal-title" id="werbematerialienFormModalLabel">Informationen anfordern</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <div id="ff-compose"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade info-modals" id="rueckrufAnfordernModal" 
+    tabindex="-1" 
+    aria-labelledby="rueckrufAnfordernModalLabel"
+     aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header p-4">
+              <h5 class="modal-title" id="rueckrufAnfordernModalLabel">Rückruf anfordern</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <div id="ff-compose-ruekruf"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- <div class="kita_aside_cta">
+        <div class="kita_aside_cta_btn"> 
+            <i class="far fa-comments"></i>
+            <p>Kontakt</p>
+        </div>
+        <div class="kita_aside_cta_content">
+            <div class="kt_close_popup">close</div>
+            <div class="kita_aside_cta_content_wrap">
+                <div class="kita_aside_cta_content_col_left">
+                    <div>
+                        <div class="textwidget">
+                            <h4>Rufen Sie uns an unter</h4>
+                            <p>
+                                <a class="kita-contact-link" href="tel:+49 89 90937196">+49 89 909 37196</a><br> 
+                                <a class="kita-contact-link" href="tel:+4915156682587">+49 151 566 82587</a>
+                            </p>
+                            <p>Oder fordern Sie einen Rückruf an.<br> Wir rufen Sie gerne zurück:</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="wp-container-2 wp-block-buttons"></div>
+                    </div> 
+                    <span class="kita-contact-link kita_btn_open_popup">Rückruf anfordern</span>
+                </div>
+                <div class="kita_aside_cta_content_col_right">
+                    <div class="kita_aside_cta_content_col_inner_right_top"><div>
+                        <div class="textwidget">
+                            <h5>Informationen anfordern</h5>
+                            <p>Gerne senden wir Ihnen unsere aktuelle Informationsbroschüre inkl. Preise.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="wp-container-3 wp-block-buttons">
+                            <div class="wp-block-button">
+                                <a class="wp-block-button__link has-white-color has-vivid-red-background-color has-text-color has-background no-border-radius" href="https://www.kitakoch.de/kita-notbetreuung-wir-helfen-ihnen/" target="_blank" rel="noreferrer noopener">Küchen-Notbetreuung</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kita_aside_cta_content_col_inner__right_bottom">
+                    <div>
+                        <div class="textwidget">
+                            <p><a href="/kontakt/" class="lita-kontakt-pop-link"></a></p>
+                            <h5><a href="/kontakt/" class="lita-kontakt-pop-link">Kontakt aufnehmen</a></h5>
+                            <p><a href="/kontakt/" class="lita-kontakt-pop-link">Schreiben Sie uns eine E-Mail mit Fragen, Kommentaren oder Feedback</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!--    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">-->
+<!--        <div class="modal-dialog modal-dialog-centered modal-lg">-->
+<!--            <div class="modal-content p-4">-->
+<!--                <form id="contactForm" action="mailto:info@kitapay.de" method="POST">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h5 class="modal-title" id="myModalLabel">Senden Sie uns Ihre Nachricht</h5>-->
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body py-4 px-4">-->
+<!--                        <div class="form-group mb-4">-->
+<!--                            <label class="form-label fs-5">Name</label>-->
+<!--                            <input type="text" name="name" required class="form-control fs-5">-->
+<!--                        </div>-->
+<!--                        <div class="form-group mb-4">-->
+<!--                            <label class="form-label fs-5">E-mail</label>-->
+<!--                            <input type="email" name="email" required class="form-control fs-5">-->
+<!--                        </div>-->
+<!--                        <div class="form-group mb-5">-->
+<!--                            <label class="form-label fs-5">Nachricht</label>-->
+<!--                            <textarea name="message" rows="4" required class="form-control fs-5"></textarea>-->
+<!--                        </div>-->
+<!--                        <div class="form-group mb-4 align-items-center">-->
+<!--                            <label class="d-flex align-items-center fs-5">-->
+<!--                                <input type="checkbox" name="agreement" required>-->
+<!--                                <span class="ms-2 fs-5">Ich stimme den Nutzungsbedingungen zu</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="submit" class="btn btn-lg gradient-border-button">Senden</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</body>
+</html>
