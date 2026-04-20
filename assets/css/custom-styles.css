@@ -689,5 +689,10 @@
         font-size: 18px;
         padding: 16px 8px;
     }
+    .kita-side-tab.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
 }
 }
