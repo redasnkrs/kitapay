@@ -544,11 +544,15 @@
 }
 
 .kita-side-tab.shift {
-  right: 680px;
+    right: 680px;
 }
 
-.kita-side-tab-inner {
-  writing-mode: vertical-rl;
+.hero-1 .download-button {
+    transform: scale(0.9);
+    transform-origin: left center;
+}
+
+.kita-side-tab-inner {  writing-mode: vertical-rl;
   transform: rotate(180deg);
   background: #00b1e6;
   color: #fff;
